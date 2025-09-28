@@ -1,5 +1,13 @@
 import FastOrientationLocker from './NativeFastOrientationLocker';
 
-export function multiply(a: number, b: number): number {
-  return FastOrientationLocker.multiply(a, b);
+export function lockToLandscape(): void {
+  return FastOrientationLocker.lockToLandscape();
+}
+
+export function lockToPortrait(): void {
+  return FastOrientationLocker.lockToPortrait();
+}
+
+export function unlockAllOrientations(): void {
+  return FastOrientationLocker.unlockAllOrientations();
 }

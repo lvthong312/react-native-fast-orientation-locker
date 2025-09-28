@@ -1,13 +1,25 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-fast-orientation-locker';
-
-const result = multiply(3, 7);
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import { lockToLandscape } from 'react-native-fast-orientation-locker';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        onPress={() => {
+          lockToLandscape();
+        }}
+      >
+        <Text>Landscape</Text>
+      </TouchableOpacity>
+      <View style={{ width: 300, height: 100, backgroundColor: 'red' }} />
+      <View style={{ width: 300, height: 100, backgroundColor: 'blue' }} />
+    </SafeAreaView>
   );
 }
 
