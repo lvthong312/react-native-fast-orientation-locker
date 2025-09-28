@@ -1,11 +1,9 @@
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import { lockToLandscape } from 'react-native-fast-orientation-locker';
+  lockToLandscape,
+  lockToPortrait,
+  unlockAllOrientations,
+} from 'react-native-fast-orientation-locker';
 
 export default function App() {
   return (
@@ -17,8 +15,20 @@ export default function App() {
       >
         <Text>Landscape</Text>
       </TouchableOpacity>
-      <View style={{ width: 300, height: 100, backgroundColor: 'red' }} />
-      <View style={{ width: 300, height: 100, backgroundColor: 'blue' }} />
+      <TouchableOpacity
+        onPress={() => {
+          lockToPortrait();
+        }}
+      >
+        <Text>Landscape</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          unlockAllOrientations();
+        }}
+      >
+        <Text>Landscape</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
