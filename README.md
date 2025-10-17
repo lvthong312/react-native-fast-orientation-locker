@@ -1,4 +1,10 @@
 # react-native-fast-orientation-locker
+<p align="center">
+  <img src="https://img.shields.io/npm/v/react-native-fast-orientation-locker?color=green" alt="npm version" />
+  <img src="https://img.shields.io/npm/dm/react-native-fast-orientation-locker" alt="npm downloads" />
+  <img src="https://img.shields.io/badge/react--native-0.70+-blue" alt="react-native" />
+</p>
+
 
 Support for orientation
 
@@ -7,6 +13,18 @@ Support for orientation
 
 ```sh
 npm install react-native-fast-orientation-locker
+```
+
+## Goto your AppDelegate.swift and add FastOrientationLocker & application function
+
+```swift
+import FastOrientationLocker //<--- add this code
+...
+  //<--- add more this function --->
+  func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+      return FastOrientationLockerImpl.supportedInterfaceOrientations()
+  }
+
 ```
 
 
@@ -18,8 +36,7 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  View,
+  TouchableOpacity
 } from 'react-native';
 import {
   lockToLandscape,
@@ -35,21 +52,21 @@ export default function App() {
           lockToLandscape();
         }}
       >
-        <Text>Landscape</Text>
+        <Text>lockToLandscape</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
           lockToPortrait();
         }}
       >
-        <Text>Landscape</Text>
+        <Text>lockToPortrait</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
           unlockAllOrientations();
         }}
       >
-        <Text>Landscape</Text>
+        <Text>unlockAllOrientations</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -62,6 +79,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
 
 ```
 

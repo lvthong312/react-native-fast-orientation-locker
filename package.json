@@ -1,6 +1,6 @@
 {
   "name": "react-native-fast-orientation-locker",
-  "version": "0.4.1",
+  "version": "0.8.0",
   "description": "Support for orientation",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",

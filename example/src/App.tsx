@@ -13,21 +13,21 @@ export default function App() {
           lockToLandscape();
         }}
       >
-        <Text>Landscape</Text>
+        <Text>lockToLandscape</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
           lockToPortrait();
         }}
       >
-        <Text>Landscape</Text>
+        <Text>lockToPortrait</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
           unlockAllOrientations();
         }}
       >
-        <Text>Landscape</Text>
+        <Text>unlockAllOrientations</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

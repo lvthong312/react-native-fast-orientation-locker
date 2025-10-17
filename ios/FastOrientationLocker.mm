@@ -1,30 +1,27 @@
 #import "FastOrientationLocker.h"
-#import <UIKit/UIKit.h>
-using namespace facebook;
-using namespace facebook::react;
-@implementation FastOrientationLocker
+#import "FastOrientationLocker-Swift.h"
+@implementation FastOrientationLocker {
+  FastOrientationLockerImpl *moduleImpl;
+}
+-(instancetype) init {
+  self = [super init];
+  if(self) {
+    moduleImpl = [FastOrientationLockerImpl new];
+  }
+  return self;
+}
 RCT_EXPORT_MODULE()
+
 - (void)lockToLandscape {
-  [self setOrientation:UIInterfaceOrientationLandscapeRight];
+  return [moduleImpl lockToLandscape];
 }
 
 - (void)lockToPortrait {
-  [self setOrientation:UIInterfaceOrientationPortrait];
+  return [moduleImpl lockToPortrait];
 }
 
 - (void)unlockAllOrientations {
-  // Cho phép xoay tự do → reset về portrait
-  [self setOrientation:UIInterfaceOrientationUnknown];
-}
-
-- (void)setOrientation:(UIInterfaceOrientation)orientation {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-      NSNumber *value = [NSNumber numberWithInt:(int)orientation];
-      [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-      [UIViewController attemptRotationToDeviceOrientation];
-    }
-  });
+  return [moduleImpl unlockAllOrientations];
 }
 
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:

@@ -2,7 +2,7 @@ PODS:
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
   - fast_float (8.0.0)
-  - FastOrientationLocker (0.1.0):
+  - FastOrientationLocker (0.7.0):
     - boost
     - DoubleConversion
     - fast_float
@@ -2605,7 +2605,7 @@ SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: b32c788ed9c6a8c584d114d0047beda9664e7cc6
-  FastOrientationLocker: 2a8bc757210bf525484d0ffc2072ba8cf9e1af77
+  FastOrientationLocker: 0fd55be53ccac0eeca0fd728f3f670af6718c1b0
   FBLazyVector: b8f1312d48447cca7b4abc21ed155db14742bd03
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
